@@ -1,0 +1,59 @@
+<style>
+    .test-merge-pr {
+        padding: 40px 0;
+    }
+    .test-merge-pr-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .test-merge-pr-title {
+        margin-bottom: 20px;
+    }
+    .test-merge-pr-image {
+        margin-top: 20px;
+        width: 100%;
+        height: auto;
+    }
+    .test-merge-pr-image img {
+        width: 100%;
+        height: auto;
+    }
+</style>
+<section class="test-merge-pr">
+    <div class="test-merge-pr-container">
+        <div class="test-merge-pr-title">
+            <h2>{{ section.settings.title }}</h2>
+        </div>
+        <div class="test-merge-pr-image">
+            {% if section.settings.image %}
+                {{ section.settings.image | image_url: width: section.settings.image.width | image_tag: loading: "lazy" }}
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% schema %}
+{
+  "name": "test-merge-pr",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:settings.title",
+      "default": "Test Merge PR"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Test Merge PR Image"
+    }
+  ],
+  "presets": [
+    {
+        "name": "Test Merge Pr"
+    }
+  ]
+}
+{% endschema %}

@@ -90,6 +90,14 @@
         "padding-block-end": 72
       }
     },
+    "test_merge_pr_BmXAtx": {
+      "type": "test-merge-pr",
+      "name": "Test Merge Pr",
+      "settings": {
+        "title": "Test Merge PR",
+        "image": "shopify://shop_images/Frame_1612707792.png"
+      }
+    },
     "product_list_fa6P9H": {
       "type": "product-list",
       "blocks": {
@@ -287,6 +295,7 @@
   },
   "order": [
     "hero_jVaWmY",
+    "test_merge_pr_BmXAtx",
     "product_list_fa6P9H"
   ]
 }
