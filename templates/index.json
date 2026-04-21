@@ -94,7 +94,7 @@
       "type": "test-merge-pr",
       "name": "Test Merge Pr",
       "settings": {
-        "title": "Test Merge PR",
+        "title": "Test Merge PR（线上）",
         "image": "shopify://shop_images/Frame_1612707792.png"
       }
     },
