@@ -1,4 +1,4 @@
-/** InsCoder WANG.J 2026-04-29 B + Add installation_zip property before checkout submit **/
+/** InsCoder WANG.J 2026-04-29 B + Add installation_zip line item property before checkout submit **/
 (function attachCheckoutPropertyUpdater() {
   const cartForm = document.getElementById('cart-form');
   if (!cartForm) return;
@@ -41,7 +41,7 @@
 
     if (!response.ok) throw new Error(`Failed to update item ${item.key}: ${response.status}`);
 
-    console.log('[installation_zip] line item updated', {
+    console.log('[installation_zip] line item property updated', {
       key: item.key,
       installation_zip: nextProperties.installation_zip,
     });
@@ -59,8 +59,10 @@
 
     try {
       const cart = await getCart();
-      await Promise.all(cart.items.map((item) => updateLineItemProperty(item)));
-      console.log('[installation_zip] all line items updated, redirecting to checkout');
+      for (const item of cart.items) {
+        await updateLineItemProperty(item);
+      }
+      console.log('[installation_zip] all line item properties updated, redirecting to checkout');
       cartForm.submit();
     } catch (error) {
       console.error('[installation_zip] failed to update line item properties before checkout', error);
@@ -70,4 +72,4 @@
     }
   });
 })();
-/** InsCoder WANG.J 2026-04-29 E + Add installation_zip property before checkout submit **/
+/** InsCoder WANG.J 2026-04-29 E + Add installation_zip line item property before checkout submit **/
