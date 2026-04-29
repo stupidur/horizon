@@ -17,6 +17,16 @@
   type="module"
   fetchpriority="low"
 ></script>
+{% comment %}
+/** InsCoder WANG.J 2026-04-29 B + Load checkout property updater **/
+{% endcomment %}
+<script
+  src="{{ 'cust-checkout-properties.js' | asset_url }}"
+  defer="defer"
+></script>
+{% comment %}
+/** InsCoder WANG.J 2026-04-29 E + Load checkout property updater **/
+{% endcomment %}
 
 <div
   {{ block.shopify_attributes }}
